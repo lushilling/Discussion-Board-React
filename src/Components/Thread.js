@@ -1,16 +1,12 @@
-// import React, { Component } from './node_modules/react';
+import React, { Component } from 'react';
 
-// class Thread extends Component {
+export default class Thread extends Component {
 
+    render() {
+        return (
+            <div>
 
-
-//     render() {
-//         return (
-//             <div>
-               
-//             </div>
-//         );
-//     }
-// }
-
-// export default Thread;
+            </div>
+        );
+    }
+}

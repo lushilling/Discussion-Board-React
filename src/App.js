@@ -3,8 +3,9 @@ import './App.css';
 // import axios from "axios";
 
 import NavigationBar from './Components/NavigationBar';
-// import Thread from './Components/Thread';
-// import Post from './Components/Post';
+import Post from './Components/Post';
+import Thread from './Components/Thread';
+
 
 class App extends Component {
 
@@ -12,8 +13,8 @@ class App extends Component {
     return (
       <div >
         <NavigationBar />
-        {/* <Post />
-        <Thread /> */}
+        <Post />
+        <Thread />
       </div >
     );
   }
