@@ -2,18 +2,18 @@ import React, { Component } from 'react';
 import './App.css';
 // import axios from "axios";
 
-import NavBar from './Components/NavBar';
-import Thread from './Components/Thread';
-import Post from './Components/Post';
+import NavigationBar from './Components/NavigationBar';
+// import Thread from './Components/Thread';
+// import Post from './Components/Post';
 
 class App extends Component {
 
   render() {
     return (
       <div >
-        <NavBar />
-        <Post />
-        <Thread />
+        <NavigationBar />
+        {/* <Post />
+        <Thread /> */}
       </div >
     );
   }
