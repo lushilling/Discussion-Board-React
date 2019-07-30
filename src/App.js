@@ -7,7 +7,7 @@ import Post from './Components/Post';
 import Thread from './Components/Thread';
 
 
-class App extends Component {
+export default class App extends Component {
 
   render() {
     return (
@@ -20,8 +20,6 @@ class App extends Component {
   }
 
 }
-
-export default App;
 
 
 
