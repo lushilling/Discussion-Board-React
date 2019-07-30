@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+// import axios from "axios";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import NavBar from './Components/NavBar';
+import Thread from './Components/Thread';
+import Post from './Components/Post';
+
+class App extends Component {
+
+  render() {
+    return (
+      <div >
+        <NavBar />
+        <Post />
+        <Thread />
+      </div >
+    );
+  }
+
 }
 
 export default App;
+
+
+
+
+
+// <Button onClick={this.handleClick}
+//   color="success"
+//   outline={true}
+// >Success</Button> <br>
+// </br>
+//   <p2>Favorite Food: <FontAwesomeIcon icon="stroopwafel" /></p2>
+//   <p>Favorite Drink: <FontAwesomeIcon icon="mug-hot" /></p>
+//   <p>Also Coffee : <FontAwesomeIcon icon={["fab", "java"]} /></p>
