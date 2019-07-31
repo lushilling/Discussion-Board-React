@@ -1,36 +1,44 @@
 import React, { Component } from 'react';
 import './App.css';
-// import axios from "axios";
+import axios from "axios";
 
 import NavigationBar from './Components/NavigationBar';
-// import Thread from './Components/Thread';
-// import Post from './Components/Post';
+import Post from './Components/Post';
+import Thread from './Components/Thread';
 
-class App extends Component {
+export default class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: []
+    };
+  }
+
+    
+
+
+  componentDidMount() {
+    this.onLoad();
+  }
+
+  onLoad = () => {
+    axios.get("http://localhost:5000/item/all")
+      .then(response => {
+        this.setState({
+          data: response.data
+        })
+      })
+  }
 
   render() {
     return (
       <div >
         <NavigationBar />
-        {/* <Post />
-        <Thread /> */}
+        <Post onLoadFunction={this.onLoad} data={this.state.data} />
+        <Thread onLoadFunction={this.onload} data={this.state.data} />
       </div >
-    );
+    )
   }
 
 }
-
-export default App;
-
-
-
-
-
-// <Button onClick={this.handleClick}
-//   color="success"
-//   outline={true}
-// >Success</Button> <br>
-// </br>
-//   <p2>Favorite Food: <FontAwesomeIcon icon="stroopwafel" /></p2>
-//   <p>Favorite Drink: <FontAwesomeIcon icon="mug-hot" /></p>
-//   <p>Also Coffee : <FontAwesomeIcon icon={["fab", "java"]} /></p>
