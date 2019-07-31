@@ -8,12 +8,15 @@ import Thread from './Components/Thread';
 
 export default class App extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       data: []
     };
   }
+
+    
+
 
   componentDidMount() {
     this.onLoad();

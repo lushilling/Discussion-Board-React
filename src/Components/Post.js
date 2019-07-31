@@ -22,6 +22,13 @@ export default class Post extends Component {
             email: e.target[1].value,
             content: e.target[2].value
         }
+
+        if (newItem.username === "" || newItem.email === "" || newItem.content === ""){
+            this.setState({error:"Please fill out all fields correctly"})
+        }else{
+            this.setState({error:""})
+        }
+
         console.log(newItem);
         axios.post("http://localhost:5000/item/createItem", newItem)
             .then(response => {
@@ -45,6 +52,8 @@ export default class Post extends Component {
                     <br />
                     <label for="accContent" id="accContentLable">content: </label>
                     <input type="content" id="accContent" class="form-control"  />
+                    <br />
+                    <p style={{color: 'red'}}>{this.state.error}</p>
                     <br />
                     <input type="submit" class="btn btn-primary" value="create post" />
                 </form>
