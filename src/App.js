@@ -5,9 +5,26 @@ import './App.css';
 import NavigationBar from './Components/NavigationBar';
 import Post from './Components/Post';
 import Thread from './Components/Thread';
+import axios from 'axios';
 
 
 export default class App extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      data: {}
+    };
+  }
+
+  componentDidMount() {
+    axios.get("http://localhost:5000/item/all")
+      .then(response => {
+        this.setState({
+          data: response.data
+        })
+      })
+  }
 
   render() {
     return (
@@ -20,16 +37,3 @@ export default class App extends Component {
   }
 
 }
-
-
-
-
-
-// <Button onClick={this.handleClick}
-//   color="success"
-//   outline={true}
-// >Success</Button> <br>
-// </br>
-//   <p2>Favorite Food: <FontAwesomeIcon icon="stroopwafel" /></p2>
-//   <p>Favorite Drink: <FontAwesomeIcon icon="mug-hot" /></p>
-//   <p>Also Coffee : <FontAwesomeIcon icon={["fab", "java"]} /></p>
