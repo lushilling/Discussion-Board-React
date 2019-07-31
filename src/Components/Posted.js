@@ -16,12 +16,14 @@ export default function Posted(props) {
             .then(res => props.onLoadFunction())
     }
 
-        return (
-            <div>
+    return (
+        <tr>
+            <td>
                 <h4>{props.username}</h4>
                 <p>{props.content}</p>
                 <button onClick={handleClick}>Delete Post</button>
-            </div>
-        );
-    
+            </td>
+        </tr>
+    );
+
 }

@@ -16,7 +16,7 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    this.onload();
+    this.onLoad();
   }
 
   onLoad = () => {

@@ -11,16 +11,16 @@ export default function Thread(props) {
         data
     } = props;
 
-        return (
-            <div>
-                <Table striped bordered hover variant="dark">
-                    <tbody>
-                        {_.reverse(data).map((posted) => (
-                            <tr><td><Posted passedFunction={props.onLoadFunction} username={posted.username} email={posted.email} content={posted.content} /></td></tr>
-                        ))}
-                    </tbody>
-                </Table>
-            </div>
-        );
-    
+    return (
+        <div>
+            <Table striped bordered hover variant="dark">
+                <tbody>
+                    {_.reverse(data).map((posted, index) => (
+                        <Posted key={index} onLoadFunction={props.onLoadFunction} username={posted.username} email={posted.email} content={posted.content} />
+                    ))}
+                </tbody>
+            </Table>
+        </div>
+    );
+
 }
