@@ -6,7 +6,6 @@ import NavigationBar from './Components/NavigationBar';
 import Post from './Components/Post';
 import Thread from './Components/Thread';
 
-
 export default class App extends Component {
 
   constructor() {
@@ -20,7 +19,7 @@ export default class App extends Component {
     this.onload();
   }
 
-  onload = () => {
+  onLoad = () => {
     axios.get("http://localhost:5000/item/all")
       .then(response => {
         this.setState({
@@ -33,8 +32,8 @@ export default class App extends Component {
     return (
       <div >
         <NavigationBar />
-        <Post onloadFunction={this.onload} />
-        <Thread />
+        <Post onLoadFunction={this.onLoad} data={this.state.data} />
+        <Thread onLoadFunction={this.onload} data={this.state.data} />
       </div >
     )
   }

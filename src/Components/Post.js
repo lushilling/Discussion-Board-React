@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../App.css';
 import axios from "axios";
 
 export default class Post extends Component {
@@ -21,16 +22,15 @@ export default class Post extends Component {
             email: e.target[1].value,
             content: e.target[2].value
         }
-
+        console.log(newItem);
         axios.post("http://localhost:5000/item/createItem", newItem)
             .then(response => {
                 console.log("post made")
                 this.setState({
                     data: response.data
                 });
+                this.props.onLoadFunction();
             });
-
-        this.props.onLoad();
     }
 
     render() {
@@ -38,10 +38,13 @@ export default class Post extends Component {
             <div>
                 <form onSubmit={this.postRequest}>
                     <label for="accUsername" id="accUsernameLabel">Username: </label>
-                    <input type="text" id="accUsername" class="form-control" required />
+                    <input type="text" id="accUsername" class="form-control"  />
+                    <br />
+                    <label for="accEmail" id="accEmailLabel">Email: </label>
+                    <input type="text" id="accEmail" class="form-control"  />
                     <br />
                     <label for="accContent" id="accContentLable">content: </label>
-                    <input type="content" id="accContent" class="form-control" required />
+                    <input type="content" id="accContent" class="form-control"  />
                     <br />
                     <input type="submit" class="btn btn-primary" value="create post" />
                 </form>
