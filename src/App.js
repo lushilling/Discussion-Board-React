@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-// import axios from "axios";
+import axios from "axios";
 
 import NavigationBar from './Components/NavigationBar';
 import Post from './Components/Post';
 import Thread from './Components/Thread';
-import axios from 'axios';
 
 
 export default class App extends Component {
@@ -13,11 +12,15 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      data: {}
+      data: []
     };
   }
 
   componentDidMount() {
+    this.onload();
+  }
+
+  onload = () => {
     axios.get("http://localhost:5000/item/all")
       .then(response => {
         this.setState({
@@ -30,10 +33,10 @@ export default class App extends Component {
     return (
       <div >
         <NavigationBar />
-        <Post />
+        <Post onloadFunction={this.onload} />
         <Thread />
       </div >
-    );
+    )
   }
 
 }

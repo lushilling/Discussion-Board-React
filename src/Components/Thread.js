@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-
-import Posted from './Posted';
+import _ from "lodash";
 
 export default class Thread extends Component {
 
     render() {
         return (
             <div>
-                <Posted />
+                
             </div>
         );
     }

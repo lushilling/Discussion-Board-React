@@ -12,37 +12,36 @@ export default class Post extends Component {
         }
     }
 
+
     postRequest = (e) => {
         e.preventDefault();
 
-        axios
-            .post("http://localhost:5000/item/createItem", {
-                username: e.target[0].value,
-                email: e.target[1].value,
-                content: e.target[2].value
-            })
+        let newItem = {
+            username: e.target[0].value,
+            email: e.target[1].value,
+            content: e.target[2].value
+        }
 
+        axios.post("http://localhost:5000/item/createItem", newItem)
             .then(response => {
-                { console.log("created webpage") }
-                //componentDidUpdate();
+                console.log("post made")
                 this.setState({
                     data: response.data
                 });
             });
-    };
+
+        this.props.onLoad();
+    }
 
     render() {
         return (
             <div>
                 <form onSubmit={this.postRequest}>
                     <label for="accUsername" id="accUsernameLabel">Username: </label>
-                    <input type="text" id="accUsername" class="form-control" name="accUsername" required />
+                    <input type="text" id="accUsername" class="form-control" required />
                     <br />
-                    <label for="accEmail" id="accEmailLable">Email: </label>
-                    <input type="email" id="accEmail" class="form-control" name="accEmail" required />
-                    <br />
-                    <label for="accContent" id="accContentLable">Content: </label>
-                    <input type="content" id="accContent" class="form-control" name="accContent" required />
+                    <label for="accContent" id="accContentLable">content: </label>
+                    <input type="content" id="accContent" class="form-control" required />
                     <br />
                     <input type="submit" class="btn btn-primary" value="create post" />
                 </form>
