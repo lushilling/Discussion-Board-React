@@ -21,9 +21,9 @@ export default class LambdaDemo extends React.Component {
 
         return (
             <p>
-                <button onClick={this.handleClick("hello")}>{loading ? "Loading..." : "Call Lambda"}</button>
-                <button onClick={this.handleClick("dad-joke")}>{loading ? "Loading..." : "Call Async Lambda"}</button>
-                <button onClick={this.handleClick("random-dog")}>{loading ? "Loading..." : "Call Async Lambda"}</button>
+                <button onClick={this.handleClick("hello")}>{loading ? "Loading..." : "hello"}</button>
+                <button onClick={this.handleClick("dad-joke")}>{loading ? "Loading..." : "dad joke"}</button>
+                <button onClick={this.handleClick("random-dog")}>{loading ? "Loading..." : "random dog"}</button>
                 <br />
                 <span>{msg}</span>
             </p>
