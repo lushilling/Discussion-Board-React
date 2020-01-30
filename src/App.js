@@ -34,10 +34,10 @@ export default class App extends Component {
       <div >
         <NavigationBar />
         {/* <Post onLoadFunction={this.onLoad} data={this.state.data} />
-        <Thread onLoadFunction={this.onload} data={this.state.data} />
-        <header className="App-header"> */}
+        <Thread onLoadFunction={this.onload} data={this.state.data} />*/}
+        <header className="App-header"> 
           <LambdaDemo />
-        {/* </header> */}
+        </header>
       </div >
     )
   }
