@@ -26,6 +26,10 @@ export default class LambdaDemo extends React.Component {
                 <button onClick={this.handleClick("random-dog")}>{loading ? "Loading..." : "random dog"}</button>
                 <br />
                 <span>{msg}</span>
+                <br />
+                <img src={msg} alt = "dog"></img>
+                <br />
+                <button onClick={this.handleClick("saveJoke")}>{loading ? "Saved" : "Save Joke "}</button>
             </p>
         )
     }

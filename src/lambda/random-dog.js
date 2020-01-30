@@ -7,12 +7,9 @@ export async function handler(event, context) {
         const response = await axios.get("https://dog.ceo/api/breeds/image/random", { headers: { Accept: "application/json" } })
         const data = response.data
 
-        const imageBase64 = await axios.get(data.message, {responseType: 'arraybuffer'})
-        .then(response => Buffer.from(response.data, 'binary').toString('base64'));
-
         return {
             statusCode: 200,
-            body: imageBase64
+            body: JSON.stringify({ msg: data.message })
         }
 
     } catch (err) {
