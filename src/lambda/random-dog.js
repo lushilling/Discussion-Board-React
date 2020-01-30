@@ -6,10 +6,11 @@ export async function handler(event, context) {
 
         const response = await axios.get("https://dog.ceo/api/breeds/image/random", { headers: { Accept: "application/json" } })
         const data = response.data
-
+        console.log(response);
+        console.log(data);
         return {
             statusCode: 200,
-            body: JSON.stringify({ msg: data.dog })
+            body: JSON.stringify({ msg: data.message })
         }
 
     } catch (err) {
