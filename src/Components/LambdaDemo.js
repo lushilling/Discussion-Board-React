@@ -22,7 +22,7 @@ export default class LambdaDemo extends React.Component {
             <p>
                 <button onClick={this.handleClick("hello")}>{loading ? "Loading..." : "hello"}</button>
                 <button onClick={this.handleClick("dad jokes")}>{loading ? "Loading..." : "dad jokes"}</button>
-                <button onClick={this.handleClick("random dog")}>{loading ? "Loading..." : "random dog"}</button>
+                {/* <button onClick={this.handleClick("random dog")}>{loading ? "Loading..." : "random dog"}</button> */}
                 <br />
                 <span>{msg}</span>
             </p>
