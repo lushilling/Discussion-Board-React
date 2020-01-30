@@ -8,11 +8,10 @@ export async function handler(event, context) {
         const data = response.data
 
         const picture = await axios.get(data.message, { headers: { Accept: "application/json" } })
-        const data2 = picture.data2
-        console.log(data2);
+
         return {
             statusCode: 200,
-            body: data2
+            body: picture
         }
 
     } catch (err) {
