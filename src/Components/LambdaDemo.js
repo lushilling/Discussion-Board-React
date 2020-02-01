@@ -28,7 +28,7 @@ export default class LambdaDemo extends React.Component {
                     <br />
                 </div1>
                 <p>
-                    <span>{msg}</span>
+                    {msg}
                     <br />
                 </p>
                 <div2>
