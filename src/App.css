@@ -32,6 +32,10 @@
   }
 }
 
-.div2 {
+.div1 {
   align-content: center;
+}
+
+.p {
+  text-align: center;
 }
