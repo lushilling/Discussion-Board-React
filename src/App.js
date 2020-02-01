@@ -10,9 +10,9 @@ export default class App extends Component {
     return (
       <div >
         <NavigationBar />
-        <header className="App-header"> 
+        <div1 className="App-header"> 
           <LambdaDemo />
-        </header>
+        </div1>
       </div >
     )
   }
