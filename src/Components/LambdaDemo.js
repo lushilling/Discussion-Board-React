@@ -29,7 +29,7 @@ export default class LambdaDemo extends React.Component {
                 <br />
                 <img src={msg} alt = "dog"></img>
                 <br />
-                <button onClick={this.handleClick("saveJoke")}>{loading ? "Saved" : "Save Joke "}</button>
+                {/* <button onClick={this.handleClick("saveJoke")}>{loading ? "Saved" : "Save Joke "}</button> */}
             </p>
         )
     }
