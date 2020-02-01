@@ -9,7 +9,7 @@ export async function handler(event, context) {
 
         return {
             statusCode: 200,
-            body: JSON.stringify({ picture: data.message })
+            body: JSON.stringify({ msg: data.message })
         }
 
     } catch (err) {
@@ -18,7 +18,7 @@ export async function handler(event, context) {
 
         return {
             statusCode: 500,
-            body: JSON.stringify({ picture: err.message }) // Could be a custom message or object i.e. JSON.stringify(err)
+            body: JSON.stringify({ msg: err.message }) // Could be a custom message or object i.e. JSON.stringify(err)
         }
 
     }

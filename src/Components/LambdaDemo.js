@@ -17,20 +17,22 @@ export default class LambdaDemo extends React.Component {
     }
 
     render() {
-        const { loading, msg , picture} = this.state
+        const { loading, msg } = this.state
 
         return (
             <div>
-                <button onClick={this.handleClick("hello")}>{loading ? "Loading..." : "hello"}</button>
-                <button onClick={this.handleClick("dad-joke")}>{loading ? "Loading..." : "dad joke"}</button>
-                <button onClick={this.handleClick("random-dog")}>{loading ? "Loading..." : "random dog"}</button>
-                <br />
-                <p>
+                <div2>
+                    <button onClick={this.handleClick("hello")}>{loading ? "Loading..." : "hello"}</button>
+                    <button onClick={this.handleClick("dad-joke")}>{loading ? "Loading..." : "dad joke"}</button>
+                    <button onClick={this.handleClick("random-dog")}>{loading ? "Loading..." : "random dog"}</button>
+                    <br />
+                </div2>
+                <div1>
                     <span>{msg}</span>
                     <br />
-                    <img src={picture} alt=""></img>
+                    <img src={msg} alt=""></img>
                     <br />
-                </p>
+                </div1>
                 {/* <button onClick={this.handleClick("saveJoke")}>{loading ? "Saved" : "Save Joke "}</button> */}
             </div>
         )
